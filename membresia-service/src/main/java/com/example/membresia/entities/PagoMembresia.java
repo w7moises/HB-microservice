@@ -1,12 +1,7 @@
 package com.example.membresia.entities;
 
-import com.example.membresia.models.Tarjeta;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class PagoMembresia {
     @Id
@@ -21,7 +16,8 @@ public class PagoMembresia {
     @JoinColumn(name = "membresia_id")
     private Membresia membresia;
 
-    @Column(name = "tarjeta_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tarjeta_id")
     private Long tarjetaId;
 
     @Transient
