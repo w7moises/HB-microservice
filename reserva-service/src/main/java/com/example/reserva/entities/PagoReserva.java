@@ -1,10 +1,10 @@
-package com.example.membresia.entities;
+package com.example.reserva.entities;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Table(name = "pago_membresias")
-public class PagoMembresia {
+@Table(name = "pago_reservas")
+public class PagoReserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,7 +15,7 @@ public class PagoMembresia {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "membresia_id")
-    private Membresia membresia;
+    private Reserva reserva;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tarjeta_id")

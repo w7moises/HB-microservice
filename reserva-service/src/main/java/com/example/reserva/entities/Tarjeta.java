@@ -1,4 +1,4 @@
-package com.example.membresia.entities;
+package com.example.reserva.entities;
 
 import javax.persistence.*;
 import java.util.Date;

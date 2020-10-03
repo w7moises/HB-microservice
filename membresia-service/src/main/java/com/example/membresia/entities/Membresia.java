@@ -1,6 +1,7 @@
 package com.example.membresia.entities;
 
 
+import com.example.membresia.models.Proveedor;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,6 +17,9 @@ public class Membresia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "proveedor_id")
+    private Long proveedorId;
+
     @Column(name = "fecha_vencimiento")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaVencimiento;
@@ -27,4 +31,6 @@ public class Membresia {
         tipoMembresias = new ArrayList<>();
     }
 
+    @Transient
+    private Proveedor proveedor;
 }

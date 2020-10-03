@@ -1,8 +1,11 @@
-package com.example.membresia.models;
+package com.example.reserva.models;
 
+import javax.persistence.Column;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 
-public class Proveedor {
+public class Cliente {
     private Long id;
     private String nombres;
     private String apellidos;
@@ -10,5 +13,4 @@ public class Proveedor {
     private String celular;
     private String direccion;
     private String correo;
-    private String calificacion;
 }

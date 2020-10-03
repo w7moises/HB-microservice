@@ -4,10 +4,12 @@ import com.example.membresia.entities.PagoMembresia;
 import com.example.membresia.repositories.PagoMembresiaRepository;
 import com.example.membresia.services.PagoMembresiaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PagoMembresiaServiceImpl implements PagoMembresiaService {
 
     @Autowired

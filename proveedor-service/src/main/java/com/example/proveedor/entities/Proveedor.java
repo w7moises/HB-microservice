@@ -31,10 +31,6 @@ public class Proveedor {
     @Column(length = 50, nullable = false)
     private String correo;
 
-    @Column(name = "create_at")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createAt;
-
-    @Column(length = 1, nullable = false)
-    private String status;
+    @Column(length = 2, nullable = false)
+    private String calificacion;
 }

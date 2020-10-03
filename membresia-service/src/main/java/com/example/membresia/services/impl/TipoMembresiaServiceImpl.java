@@ -4,10 +4,12 @@ import com.example.membresia.entities.TipoMembresia;
 import com.example.membresia.repositories.TipoMembresiaRepository;
 import com.example.membresia.services.TipoMembresiaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TipoMembresiaServiceImpl implements TipoMembresiaService {
 
     @Autowired
