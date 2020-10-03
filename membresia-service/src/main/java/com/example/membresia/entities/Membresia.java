@@ -2,9 +2,11 @@ package com.example.membresia.entities;
 
 
 import com.example.membresia.models.Proveedor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,7 +26,10 @@ public class Membresia {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaVencimiento;
 
-    @OneToMany(mappedBy = "membresia")
+    @Valid
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "tipoMembresia_id")
     private List<TipoMembresia> tipoMembresias;
 
     public Membresia(){

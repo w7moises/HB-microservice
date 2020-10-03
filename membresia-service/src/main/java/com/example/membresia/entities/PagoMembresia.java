@@ -1,9 +1,13 @@
 package com.example.membresia.entities;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
-@Table(name = "pago_membresias")
+@Entity
+@Table(name = "pagos")
+@Data
 public class PagoMembresia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
