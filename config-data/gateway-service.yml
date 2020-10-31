@@ -21,11 +21,7 @@ spring:
           uri: lb://proveedor-service
           predicates:
             - Path=/proveedores/**
-        - id: membresia-service
-          uri: lb://membresia-service
+        - id: shopping-service
+          uri: lb://shopping-service
           predicates:
-            - Path=/membresias/**
-        - id: reserva-service
-            uri: lb://reserva-service
-            predicates:
-              - Path=/reservas/**
+            - Path=/invoices/**
