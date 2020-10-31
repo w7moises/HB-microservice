@@ -1,15 +1,19 @@
 package com.example.reserva.entities;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 @Table(name = "tarjetas")
+@Data
 public class Tarjeta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre_membresia", length = 16, nullable = false)
+    @Column(name = "numero_tarjeta", length = 16, nullable = false)
     private String numeroTarjeta;
 
     @Column(name = "nombre_propietario", length = 40, nullable = false)
