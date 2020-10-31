@@ -8,7 +8,7 @@ Feature: COMO cliente
     Then deberá pagar la membresía del aplicativo
 
   Scenario: Cancelar Membresía
-    Given el usuario quiere publicar servicios
+    Given el cliente quiere publicar servicios
     When se esté registrando
     Then deberá retroceder o dar click en "Cancelar" la opción que se muestra en la misma ventana
 
