@@ -1,9 +1,12 @@
 package com.example.proveedor.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "proveedores")
@@ -33,4 +36,14 @@ public class Proveedor {
 
     @Column(length = 2, nullable = false)
     private String calificacion;
+
+    @Valid
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "publicacion_id")
+    private List<Publicacion> publicaciones;
+
+    public Proveedor(){
+        publicaciones = new ArrayList<>();
+    }
 }

@@ -1,9 +1,13 @@
 package pe.edu.upc.cliente.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "clientes")
@@ -30,4 +34,14 @@ public class Cliente {
 
     @Column(length = 50, nullable = false)
     private String correo;
+
+    @Valid
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "reseña_id")
+    private List<Reseña> reseñas;
+
+    public Cliente(){
+        reseñas = new ArrayList<>();
+    }
 }
