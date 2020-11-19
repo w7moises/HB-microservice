@@ -1,12 +1,13 @@
 server:
-  port: 8099
+  port: 
+    - "8099:8099"
 
 eureka:
   instance:
-    hostname: docker-desktop
+    hostname: localhost
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://da525a158663:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       
