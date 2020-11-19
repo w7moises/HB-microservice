@@ -1,5 +1,5 @@
 server:
-  port: 
+  ports: 
     - "8099:8099"
 
 eureka:
