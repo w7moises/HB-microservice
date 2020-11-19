@@ -1,6 +1,5 @@
 server:
-  ports: 
-    - "8099:8099"
+  port : 8099
 
 eureka:
   instance:
