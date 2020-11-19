@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: registry-service
+    hostname: localhost
   client:
     registerWithEureka: false
     fetchRegistry: false
