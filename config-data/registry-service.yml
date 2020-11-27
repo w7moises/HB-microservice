@@ -3,10 +3,10 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: registry-service1.azurewebsites.net
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}/eureka/
       
